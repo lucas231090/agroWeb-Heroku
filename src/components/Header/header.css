@@ -1,0 +1,111 @@
+
+.sidebar{
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: #33B14C ;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    z-index: 999;
+}
+
+.sidebar div{
+    background: url('../../assets/cover.png');
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+
+.sidebar div{
+    padding-top: 30px;
+}
+
+.sidebar div img{
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    -webkit-filter: drop-shadow(2px 3px 6px #121212);
+    filter: drop-shadow(2px 3px 6px #121212);
+    object-fit:cover
+}
+
+.sidebar a{
+    display: block;
+    color: rgba(255,255,255, 1);
+    padding:16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: ease-in-out .2s;
+    font-size: 17.5px;
+}
+
+.sidebar a svg{
+    margin-right: 15px;
+}
+
+.sidebar a:hover{
+    background-color: #2373BE;
+    color: #fff
+}
+
+.form-submit-button {
+    background:#f24437;
+    color:rgba(255,255,255, 0.8);
+    border-style:outset;
+    height:40px;
+    width:100%;
+    font-size: 25px;
+}
+
+.form-submit-button:hover {
+    background-color: #f24437;
+    color: #fff
+}
+
+.content{
+    margin-left: 300px;
+    padding: 1px 16px;
+}
+
+@media screen and (max-width:700px){
+    .sidebar{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+div.content{
+    margin-left: 0;
+}
+
+.sidebar a{
+    float: left;
+}
+
+.sidebar div{
+    display: none;
+}
+
+.sidebar a svg{
+    display: none;
+}
+
+}
+
+@media screen and (max-width: 400px){
+    .sidebar a{
+        text-align: center;
+        float: none;
+    }
+
+    .sidebar a svg{
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+.jones{
+    font-size: 25px;
+    height: 50px;
+    width: 450px;
+    background-color: #81CF91;
+    color: #fff;
+    
+}
+
+.jones:hover{
+    background-color: #33B14C;
+    transition: 0.5s;
+
+}
+
+.tituloIN{
+    align-self: center;
+    margin-top: 45px;
+    font-size: 30px;
+    color:dodgerblue;
+}
+
+.research{
+    align-self: center;
+}

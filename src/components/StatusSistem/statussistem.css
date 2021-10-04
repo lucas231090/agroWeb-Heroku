@@ -1,0 +1,20 @@
+.statusSistem{
+    display: flex;
+    border-radius: 7px;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.itemStatus{
+    font-size: 20px;
+}
+
+.valueItemStatus{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ajusteStatus{
+    align-self: center;
+}

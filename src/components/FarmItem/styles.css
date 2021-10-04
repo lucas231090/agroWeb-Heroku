@@ -1,0 +1,51 @@
+li.fazenda-item {
+    background: #fff;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+li.fazenda-item header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li.fazenda-item header img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+
+li.fazenda-item header .fazenda-info {
+    margin-left: 10px;
+}
+
+.fazenda-info strong {
+    display: block;
+    font-size: 16px;
+    color: #333
+}
+
+.fazenda-info span {
+    font-size: 13px;
+    color: #999;
+    margin-top: 2px;
+}
+
+li.fazenda-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+li.fazenda-item a {
+    color: #5a2e;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+li.fazenda-item a:hover {
+    color: #479829;
+}
