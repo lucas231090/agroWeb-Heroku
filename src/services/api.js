@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://apiagro-backend.herokuapp.com/'
+    baseURL: process.env.REACT_APP_API_URL
 })
 
 export default api
+
+//http://apiagro-backend.herokuapp.com/
