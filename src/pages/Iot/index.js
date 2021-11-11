@@ -1,13 +1,13 @@
 import React from 'react'
 import Switch from "react-switch"
 import {useState} from 'react'
+import api from '../../services/api'
 
 import './iotPage.css'
 import Header from '../../components/Header'
 import Title from '../../components/Title'
 import IotCard from '../../components/IoT'
 import SensorCard from '../../components/SensorCard'
-
 
 import {FiArrowLeft} from 'react-icons/fi'
 
@@ -19,37 +19,33 @@ export default function Iot(){
 
     const isSwitch = () =>{
          setIsEnable(previousState => !previousState)
+        
     }
 
-    const [isEnable2, setIsEnable2] = useState(false)
+    function socketSwitch(){
 
-    const isSwitch2 = () =>{
-         setIsEnable2(previousState => !previousState)
+     const onSocket = {state: 'on'}
+     const offSocket = {state: 'off'}
+  
+     const headers ={
+          'Content-Type' : 'application/json',
+          'user_id' : '615e71c6321b6631e0729b64'
+     }
+
+     if(isEnable === false){
+          api.put('/actuator/618d139117ae0f00209c78c8', onSocket, {headers} )
+          
+     }else{
+          api.put('/actuator/618d139117ae0f00209c78c8', offSocket, {headers})
+          
+     }
     }
 
-    const [isEnable3, setIsEnable3] = useState(false)
+    function processar(){
+     isSwitch();
+     socketSwitch();
+ }
 
-    const isSwitch3 = () =>{
-         setIsEnable3(previousState => !previousState)
-    }
-
-    const [isEnable4, setIsEnable4] = useState(false)
-
-    const isSwitch4 = () =>{
-         setIsEnable4(previousState => !previousState)
-    }
-
-    const [isEnable5, setIsEnable5] = useState(false)
-
-    const isSwitch5 = () =>{
-         setIsEnable5(previousState => !previousState)
-    }
-
-    const [isEnable6, setIsEnable6] = useState(false)
-
-    const isSwitch6 = () =>{
-         setIsEnable6(previousState => !previousState)
-    }
          
     return(
         
@@ -103,7 +99,7 @@ export default function Iot(){
         
         <div className="switchbutton">
         <Switch
-        onChange={isSwitch}
+        onChange={processar}
         checked={isEnable}
         offColor={'#c00212'}
         height={40}
@@ -111,83 +107,16 @@ export default function Iot(){
         /> 
         </div>
         
-        {isEnable ? <div className="statusAtuadoresON">LIGADO</div> : <div className="statusAtuadoresOFF"> DESLIGADO </div>}
+        {isEnable ? <div className="statusAtuadoresON">LIGADO</div> :
+         <div className="statusAtuadoresOFF"> DESLIGADO </div>}
         
         
         </IotCard>
 
-        <IotCard title="Ventilação 1">
-        <div className="switchbutton">
-        <Switch
-        onChange={isSwitch2}
-        checked={isEnable2}
-        offColor={'#c00212'}
-        height={40}
-        width={80}
-        /> 
-        </div>
-        
-        {isEnable2 ? <div className="statusAtuadoresON">LIGADO</div> : <div className="statusAtuadoresOFF"> DESLIGADO </div>}
-              
-        </IotCard>
-
-        <IotCard title="Aquecimento 1">
-        <div className="switchbutton">
-        <Switch
-        onChange={isSwitch3}
-        checked={isEnable3}
-        offColor={'#c00212'}
-        height={40}
-        width={80}
-        /> 
-        </div>
-        {isEnable3 ? <div className="statusAtuadoresON">LIGADO</div> : <div className="statusAtuadoresOFF"> DESLIGADO </div>}
-        </IotCard>
-
+       
         </div>
 
-        <div className="alinharIoT">
-        <IotCard title="Iluminação 2">
-        <div className="switchbutton">
-        <Switch
-        onChange={isSwitch4}
-        checked={isEnable4}
-        offColor={'#c00212'}
-        height={40}
-        width={80}
-        /> 
-        </div>
-        {isEnable4 ? <div className="statusAtuadoresON">LIGADO</div> : <div className="statusAtuadoresOFF"> DESLIGADO </div>}
-        </IotCard>
-
-        <IotCard title="Ventilação 2">
-        <div className="switchbutton">
-        <Switch
-        onChange={isSwitch5}
-        checked={isEnable5}
-        offColor={'#c00212'}
-        height={40}
-        width={80}
-        /> 
-        </div>
-        {isEnable5 ? <div className="statusAtuadoresON">LIGADO</div> : <div className="statusAtuadoresOFF"> DESLIGADO </div>}
-        </IotCard>
-
-        <IotCard title="Aquecimento 2">
-        <div className="switchbutton">
-        <Switch
-        onChange={isSwitch6}
-        checked={isEnable6}
-        offColor={'#c00212'}
-        height={40}
-        width={80}
-        /> 
-        </div>
-        {isEnable6 ? <div className="statusAtuadoresON">LIGADO</div> : <div className="statusAtuadoresOFF"> DESLIGADO </div>}
-        </IotCard>
-        </div>
-
-        </div>
+    </div>
 
     </div>
     
